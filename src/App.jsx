@@ -2,7 +2,9 @@ import './App.css'
 import Hero from './component/Hero/Hero.jsx'
 import Navbar from './component/Navbar.jsx'
 import { useEffect, useState } from "react";
-import Footer from './component/Footer/footer.jsx';
+  
+import Footer from './component/Footer.jsx';
+
 
 function App() {
 
@@ -18,7 +20,8 @@ function App() {
     <div className={loaded ? "app show" : "app"}>
       <Navbar />
       <Hero />
-      <Footer /> 
+      <Footer />
+
     </div>
   );
 }
