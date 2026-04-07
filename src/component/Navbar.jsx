@@ -1,6 +1,6 @@
 import React from 'react'
 import './Navbar.css'
-const Navbar = () => {
+const Navbar = ({ onLoginClick }) => {
   return (
     <nav className='navbar'>
         <img src="" alt="" />
@@ -21,7 +21,15 @@ const Navbar = () => {
 
   <li><a href="/contact">Contact</a></li>
   <li>
-    <button className="login-btn" onClick={() => console.log('Login clicked')}>Login</button>
+    <button
+      className="login-btn"
+      type="button"
+      onClick={() => {
+        onLoginClick?.();
+      }}
+    >
+      Login
+    </button>
     
   </li>
 </ul>

@@ -2,7 +2,7 @@ import './App.css'
 import Hero from './component/Hero/Hero.jsx'
 import Navbar from './component/Navbar.jsx'
 import { useEffect, useState } from "react";
-import Footer from "./component/Footer/footer.jsx";/* i change the footer file name to lowercase as it is a convention to have component file names start with uppercase letters. I also added the import statement for the Footer component in the App.jsx file.*/
+import Footer from "./component/Footer/footer.jsx";
 import Login from './component/Login/login.jsx';
 
 
@@ -10,6 +10,7 @@ import Login from './component/Login/login.jsx';
 function App() {
 
   const [loaded, setLoaded] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
@@ -19,10 +20,36 @@ function App() {
 
   return (
     <div className={loaded ? "app show" : "app"}>
-      <Navbar />
+      <Navbar
+        onLoginClick={() => {
+          setShowLogin((current) => !current);
+        }}
+      />
+
       <Hero />
       <Footer />
-      <Login />
+
+      {showLogin ? (
+        <div
+          className="login-modal-backdrop"
+          onClick={() => {
+            setShowLogin(false);
+          }}
+        >
+          <div
+            className="login-modal"
+            onClick={(e) => {
+              e.stopPropagation();
+            }}
+          >
+            <Login
+              onClose={() => {
+                setShowLogin(false);
+              }}
+            />
+          </div>
+        </div>
+      ) : null}
 
     </div>
   );
