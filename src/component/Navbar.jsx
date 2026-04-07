@@ -22,6 +22,7 @@ const Navbar = () => {
   <li><a href="/contact">Contact</a></li>
   <li>
     <button className="login-btn" onClick={() => console.log('Login clicked')}>Login</button>
+    
   </li>
 </ul>
     </nav>
