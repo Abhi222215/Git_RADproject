@@ -2,10 +2,13 @@
   display: flex;
   flex-direction: column;
   margin: auto;
-  background: #fff;
-  padding-bottom: 30px;
-  width: min(600px, calc(100% - 32px));
+  background: #000e42ee;
+  padding-bottom: 32px;
+  width: min(420px, calc(100% - 32px));
+  max-height: 90vh;
+  overflow-y: auto;
   border-radius: 12px;
+  box-sizing: border-box;
 }
 
 .login-modal-backdrop {
@@ -15,7 +18,7 @@
   align-items: center;
   justify-content: center;
   padding: 16px;
-  background: rgba(14, 5, 120, 0.25);
+  background: rgba(9, 1, 93, 0.25);
   z-index: 1000;
 }
 
@@ -36,7 +39,7 @@
   gap: 9px;
   padding: 20px;
   width: 100%;
-  margin-top: 30px;
+  margin-top: 18px;
   position: relative;
 }
 
@@ -56,24 +59,24 @@
 }
 
 .text {
-  font-size: 48px;
+  font-size: clamp(28px, 5vw, 40px);
   font-weight: 700;
-  color: #0e0578;
+  color: #fff;
 
 }
 
 .underline {
   width: 61px;
   height: 6px;
-  background-color: #0e0578;
+  background-color: #ffffff;
   border-radius: 9px;
 }
 
 .inputs {
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  margin-top: 55px;
+  gap: 16px;
+  margin-top: 28px;
   padding: 0 20px;
 }
 
@@ -87,13 +90,14 @@
   border-radius: 6px;
   margin: auto;
   width: min(480px, 100%);
-  height: 80px;
+  height: 64px;
+  box-sizing: border-box;
 }
 .input img {
   margin: 0px 16px;
 }
 .input input {
- height: 50px;
+  height: 44px;
   width: 100%;
   background: transparent;
   border: none;
@@ -102,10 +106,11 @@
 
 }
 .forgot-password {
-  padding-left: 62px;
+  padding-left: 0;
   margin-top: 27px;
-  color: #444;
-  font-size: 18px;
+  color: #e6e6e6;
+  font-size: 16px;
+  text-align: center;
 }
 
 .forgot-password span {
@@ -116,8 +121,11 @@
 
 .submit-container {
   display: flex;
-  gap: 30px;
-  margin: 60px auto;
+  gap: 14px;
+  margin: 28px auto 12px;
+  padding: 0 20px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .submit {
   display: flex;
@@ -125,16 +133,34 @@
   align-items: center;
   background: #0e0578;  
   color: #fff;
-  width: 220px;
-  height: 59px;
+  width: 170px;
+  height: 48px;
   border-radius: 50px;
-  font-size: 19px;
+  font-size: 16px;
   font-weight: 700;
   cursor: pointer;
   border: none;
+  box-sizing: border-box;
 
 }
 .submit.inactive {
   background: #ccc;
   color: #666;
+}
+
+@media (max-width: 480px) {
+  .submit-container {
+    flex-direction: column;
+    gap: 12px;
+    margin: 22px auto 10px;
+    width: 100%;
+  }
+
+  .submit {
+    width: 100%;
+  }
+
+  .inputs {
+    padding: 0 16px;
+  }
 }
