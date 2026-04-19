@@ -1,14 +1,14 @@
 
 import React from 'react'
 import './login.css'
-import user_icon from '../../assets/drafts_29dp_000000_FILL0_wght400_GRAD0_opsz24.png'
-import password_icon from '../../assets/password_29dp_000000_FILL0_wght400_GRAD0_opsz24.svg'
+import user_icon from '../../assets/password_29dp_000000_FILL0_wght400_GRAD0_opsz24.svg'
+import password_icon from '../../assets/drafts_29dp_000000_FILL0_wght400_GRAD0_opsz24.png'
 import person_add_icon from '../../assets/person_29dp_000000_FILL0_wght400_GRAD0_opsz24.svg'
 
 
 const Login = ({ onClose }) => {
   const [action, setAction] = React.useState('Sign up');
-
+password_29dp_000000_FILL0_wght400_GRAD0_opsz24.svg
   return (
     <div className="container">
       <div className="header">
