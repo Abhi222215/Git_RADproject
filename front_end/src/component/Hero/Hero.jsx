@@ -11,6 +11,7 @@ const Hero = () => {
           <img
             src={posterImg}   // 👈 use this
             alt="Mission: Impossible - Dead Reckoning Part One poster"
+            loading="lazy"
           />
         </div>
 
@@ -38,8 +39,8 @@ A global race against time to stop a powerful AI threat, filled with action, sus
                 <span>⭐️⭐️⭐️⭐️☆</span> {/* Example: 4 out of 5 stars */}
                  <span className="rating-score">4.0/5</span>
               </div>
-         
-            
+
+
             <button className="btn">Buy Tickets</button> {/* fixed */}
           </div>
         </div>
@@ -48,4 +49,4 @@ A global race against time to stop a powerful AI threat, filled with action, sus
   )
 }
 
-export default Hero
+export default React.memo(Hero)

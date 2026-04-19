@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React, { useState, useCallback } from 'react'
 import './login.css'
 import user_icon from '../../assets/person_29dp_000000_FILL0_wght400_GRAD0_opsz24.svg'
 import password_icon from '../../assets/password_29dp_000000_FILL0_wght400_GRAD0_opsz24.svg'
@@ -7,7 +7,15 @@ import person_add_icon from '../../assets/drafts_29dp_000000_FILL0_wght400_GRAD0
 
 
 const Login = ({ onClose }) => {
-  const [action, setAction] = React.useState('Sign up');
+  const [action, setAction] = useState('Sign up');
+
+  const handleSignUp = useCallback(() => {
+    setAction('Sign up');
+  }, []);
+
+  const handleLogin = useCallback(() => {
+    setAction('Login');
+  }, []);
 
   return (
     <div className="container">
@@ -54,18 +62,14 @@ const Login = ({ onClose }) => {
           <button
             className={action === 'Sign up' ? 'submit' : 'submit inactive'}
             type="button"
-            onClick={() => {
-              setAction('Sign up');
-            }}
+            onClick={handleSignUp}
           >
             Sign up
           </button>
           <button
             className={action === 'Login' ? 'submit' : 'submit inactive'}
             type="button"
-            onClick={() => {
-              setAction('Login');
-            }}
+            onClick={handleLogin}
           >
             Login
           </button>
@@ -75,4 +79,4 @@ const Login = ({ onClose }) => {
   );
 };
 
-export default Login; 
+export default React.memo(Login); 

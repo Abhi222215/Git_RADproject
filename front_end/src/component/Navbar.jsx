@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import './Navbar.css'
 const Navbar = ({ onLoginClick }) => {
+  const handleLoginClick = useCallback(() => {
+    onLoginClick?.();
+  }, [onLoginClick]);
+
   return (
     <nav className='navbar'>
         <img src="" alt="" />
-     
+
      <ul className="nav-menu">
   <li><a href="/Home">Home</a></li>
   <li><a href="/about">About</a></li>
@@ -24,17 +28,15 @@ const Navbar = ({ onLoginClick }) => {
     <button
       className="login-btn"
       type="button"
-      onClick={() => {
-        onLoginClick?.();
-      }}
+      onClick={handleLoginClick}
     >
       Login
     </button>
-    
+
   </li>
 </ul>
     </nav>
   )
 }
 
-export default Navbar
+export default React.memo(Navbar)
