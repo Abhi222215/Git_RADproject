@@ -8,7 +8,7 @@ import person_add_icon from '../../assets/person_29dp_000000_FILL0_wght400_GRAD0
 
 const Login = ({ onClose }) => {
   const [action, setAction] = React.useState('Sign up');
-password_29dp_000000_FILL0_wght400_GRAD0_opsz24.svg
+
   return (
     <div className="container">
       <div className="header">
