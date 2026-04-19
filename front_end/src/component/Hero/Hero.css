@@ -32,11 +32,11 @@
 .hero-card {
   position: relative;
   z-index: 2;
-  max-width: 1050px;  
+  max-width: 1050px;
   width: 95%;
-  display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: 24px;
+  display: flex;
+  gap: 40px; /* space between image and details */
+  align-items: center; /* vertical alignment */
   padding: 28px 22px ;
   min-height: 80vh;
   max-height: 95vh;
@@ -47,9 +47,6 @@
   border-radius: 10px;
   border: 1px solid rgba(241, 237, 237, 0.567);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
-  display: flex;
-  gap: 40px; /* space between image and details */
-  align-items: center; /* top align image & text */
 }
 
 /* POSTER */
@@ -66,7 +63,6 @@ width: 100%;
 height: 100%;
 object-fit: cover;
 object-position: top;
-gap: 30px;
 border-radius:  4px;
 }
 
@@ -76,7 +72,7 @@ border-radius:  4px;
   flex-direction: column;
   gap: 30px;
   justify-content: center;
-  margin-top: 8 px;
+  margin-top: 8px;
 }
 
 /* TITLE */
