@@ -1,5 +1,5 @@
 import './App.css'
-import Hero from './component/Hero/Hero.jsx'
+
 import Navbar from './component/Navbar.jsx'
 import { lazy, Suspense, useCallback, useState } from "react";
 import Footer from "./component/Footer/footer.jsx";
@@ -24,7 +24,7 @@ function App() {
   return (
     <div className="app">
       <Toaster position="top-right" />
-     { !isAdminRoute && <Navbar onLoginClick={handleLoginClick} /> }
+     { !isAdminRoute && <Navbar /> }
 
       <Routes>
         <Route path="/" element={<Home />} />
