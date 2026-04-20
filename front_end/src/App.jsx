@@ -10,6 +10,7 @@ import { Mybooking } from './pages/Mybooking.jsx';
 import { Seatlayout } from './pages/Seatlayout.jsx';
 import { Favorite } from './pages/Favorite.jsx';
 import { Toaster } from 'react-hot-toast';
+import { Home } from 'lucide-react';
 
 const Login = lazy(() => import('./component/Login/Login.jsx'));      
 
@@ -26,7 +27,7 @@ function App() {
      { !isAdminRoute && <Navbar onLoginClick={handleLoginClick} /> }
 
       <Routes>
-        <Route path="/" element={<Hero />} />
+        <Route path="/" element={<Home />} />
         <Route path="/movie" element={<Movie />} />
         <Route path="/movie/:id " element={<Moviedetails />} />
         <Route path="/mybooking" element={<Mybooking />} />
