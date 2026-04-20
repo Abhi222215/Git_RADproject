@@ -8,7 +8,7 @@ import { Mybooking } from './pages/Mybooking.jsx'
 import { Seatlayout } from './pages/Seatlayout.jsx'
 import { Favorite } from './pages/Favorite.jsx'
 import { Toaster } from 'react-hot-toast'
-import { Home } from 'lucide-react'
+import Home from './pages/home.jsx'
 
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
       {!isAdminRoute && <Navbar />}
 
       <Routes>
-        <Route path="/" element={<Home/>} />
+        <Route path="/" element={<Home />} />
         <Route path="/movie" element={<Movie />} />
         <Route path="/movie/:id" element={<Moviedetails />} />
         <Route path="/mybooking" element={<Mybooking />} />
