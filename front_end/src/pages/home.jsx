@@ -1,3 +1,6 @@
+import HeroSection from '../component/Herosection.jsx'
+
 export default function Home() {
-  return <main className="min-h-screen pt-28" />
+  return <HeroSection />
 }
+
