@@ -1,7 +1,3 @@
-import React from 'react'
-
-export const home = () => {
-  return (
-    <div>home</div>
-  )
+export default function Home() {
+  return <main className="min-h-screen pt-28" />
 }
