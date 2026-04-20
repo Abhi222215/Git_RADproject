@@ -1,42 +1,36 @@
-import React, { useCallback } from 'react'
-import './Navbar.css'
-const Navbar = ({ onLoginClick }) => {
-  const handleLoginClick = useCallback(() => {
-    onLoginClick?.();
-  }, [onLoginClick]);
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { Menu, Search, X } from 'lucide-react'
 
+export const Navbar = ({ onLoginClick }) => {
   return (
-    <nav className='navbar'>
-        <img src="" alt="" />
+    <div className='fixed top-0 left-0 z-50 w-full flex items-center justify-between px-6 md:px-16 lg:px-36 py-5'>
+      <Link to="/" className='max-md:flex-1'>
+        <img src="/favicon.svg" alt="Logo" className='w-10 h-10' />
+      </Link>
 
-     <ul className="nav-menu">
-  <li><a href="/Home">Home</a></li>
-  <li><a href="/about">About</a></li>
+      <div className='max-md:absolute max-md:top-0 max-md:left-0 max-md:font-medium max-md:text-lg z-50 flex flex-col md:flex-row items-center max-md:justify-center gap-8 md:px-8 py-3 max-md:h-screen md:rounded-full backdrop-blur bg-black/70 md:bg-white/10 md:border border-gray-300/20 overflow-hidden transition-[width] duration-300'>
+        <X className="md:hidden absolute top-6 right-6 w-6 h-6 cursor-pointer" />
 
-  {/* Movies with dropdown */}
-  <li className="dropdown">
-    <a href="/movies">Movies ▼</a>
-    <ul className="dropdown-menu">
-      <li><a href="/movies/action">Action</a></li>
-      <li><a href="/movies/adventure">Adventure</a></li>
-      <li><a href="/movies/thriller">Thriller</a></li>
-    </ul>
-  </li>
+        <Link to="/">Home</Link>
+        <Link to="/movie">Movies</Link>
+        <Link to="/theaters">Theaters</Link>
+        <Link to="/favorite">Favorite</Link>
+        <Link to="/releases">Releases</Link>
+      </div>
 
-  <li><a href="/contact">Contact</a></li>
-  <li>
-    <button
-      className="login-btn"
-      type="button"
-      onClick={handleLoginClick}
-    >
-      Login
-    </button>
-
-  </li>
-</ul>
-    </nav>
+      <div className='flex items-center gap-8'>
+        <Search className='max-md:hidden w-6 h-6 cursor-pointer' />
+        <button
+          type="button"
+          onClick={onLoginClick}
+          className='px-4 py-1 sm:px-7 sm:py-2 bg-primary hover:bg-primary transition rounded-full font-medium cursor-pointer'
+        >
+          Login
+        </button>
+        <Menu className='md:hidden w-8 h-8 cursor-pointer' />
+      </div>
+    </div>
   )
 }
-
-export default React.memo(Navbar)
+export default Navbar
