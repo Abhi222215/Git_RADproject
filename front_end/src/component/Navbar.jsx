@@ -24,9 +24,7 @@ const Navbar = ({ onLoginClick }) => {
 
         <Link onClick={scrollTopAndClose} to="/">Home</Link>
         <Link onClick={scrollTopAndClose} to="/movie">Movies</Link>
-        <Link onClick={scrollTopAndClose} to="/theaters">Theaters</Link>
         <Link onClick={scrollTopAndClose} to="/favorite">Favorite</Link>
-        <Link onClick={scrollTopAndClose} to="/releases">Releases</Link>
       </div>
 
       <div className='flex items-center gap-8'>
