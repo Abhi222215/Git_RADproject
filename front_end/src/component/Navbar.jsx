@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Menu, MenuIcon, Search, SearchIcon, X, XIcon } from 'lucide-react'
+import { Menu, MenuIcon, Search, SearchIcon, XIcon } from 'lucide-react'
 import {assets} from '../assets/assets'
 
 const Navbar = ({ onLoginClick }) => {
