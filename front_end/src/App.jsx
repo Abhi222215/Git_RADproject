@@ -1,7 +1,7 @@
 import Navbar from './component/Navbar.jsx'
 import { lazy, Suspense, useCallback, useState } from "react";
 import Footer from "./component/Footer/footer.jsx";
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { Movie } from './pages/Movie.jsx';
 import { Moviedetails } from './pages/Moviedetails.jsx';
 import { Mybooking } from './pages/Mybooking.jsx';
@@ -54,6 +54,8 @@ function App() {
         <Route path="/mybooking" element={<Mybooking />} />
         <Route path="/movie/:id/:date" element={<Seatlayout />} />
         <Route path="/favorite" element={<Favorite />} />
+
+        <Route path="*" element={<Navigate to="/" replace />} />
 
       </Routes>
       { !isAdminRoute && <Footer /> }
