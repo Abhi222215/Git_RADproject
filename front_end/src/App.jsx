@@ -8,8 +8,7 @@ import { Mybooking } from './pages/Mybooking.jsx'
 import { Seatlayout } from './pages/Seatlayout.jsx'
 import { Favorite } from './pages/Favorite.jsx'
 import { Toaster } from 'react-hot-toast'
-import './App.css'
-import Hero from './component/Hero/Hero.jsx'
+
 
 function App() {
   const isAdminRoute = useLocation().pathname.startsWith('/admin');
