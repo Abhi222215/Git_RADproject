@@ -1,43 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
-
+@import " Tailwindcss/base";
+@import " Tailwindcss/components";
+@import " Tailwindcss/utilities";   
 
 *{
-
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-     font-family: "Outfit", sans-serif;
-
+    font-family: 'Outfit', sans-serif;  
 }
-body{
-    font-family: "Outfit", sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-}
-a{
-    text-decoration: none;
-    color: inherit;
-    line-height: 1.5;
-    cursor: pointer ;
-    }
-    .navbar {
-        background-color: #333;
-        color: #fff;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 20px;
-    }
-    .btn {
-        background-color: #007BFF;
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        
-    }
-    .btn:hover {
-        background-color: #0056b3;
-    } 
