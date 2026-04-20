@@ -11,10 +11,10 @@ import { Toaster } from 'react-hot-toast'
 import Home from './pages/home.jsx'
 
 
-function App() {
+const App = () => {
   const isAdminRoute = useLocation().pathname.startsWith('/admin');
   return (
-    <div className="app">
+    <>
       <Toaster position="top-right" />
       {!isAdminRoute && <Navbar />}
 
@@ -30,7 +30,7 @@ function App() {
 
       </Routes>
       {!isAdminRoute && <Footer />}
-    </div>
+    </>
   );
 }
 export default App
