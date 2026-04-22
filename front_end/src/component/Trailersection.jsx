@@ -1,10 +1,34 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import ReactPlayer from 'react-player'
 import { dummyTrailers } from '../assets/assets'
 
 export default function TrailerSection() {
   const [hoveredIndex, setHoveredIndex] = useState(null)
   const [selectedTrailer, setSelectedTrailer] = useState(null)
+  const [triggerElement, setTriggerElement] = useState(null)
+  const closeButtonRef = useRef(null)
+
+  useEffect(() => {
+    if (!selectedTrailer) return
+
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setSelectedTrailer(null)
+      }
+    }
+
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [selectedTrailer])
+
+  useEffect(() => {
+    if (selectedTrailer) {
+      closeButtonRef.current?.focus()
+      return
+    }
+
+    triggerElement?.focus()
+  }, [selectedTrailer, triggerElement])
 
   return (
     <section className="px-6 md:px-16 lg:px-36 py-12">
@@ -13,20 +37,24 @@ export default function TrailerSection() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {dummyTrailers.map((trailer, index) => (
           <button
-            key={trailer.videoUrl}
+            key={trailer.id}
             type="button"
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
-            onClick={() => setSelectedTrailer(trailer.videoUrl)}
+            onClick={(event) => {
+              setTriggerElement(event.currentTarget)
+              setSelectedTrailer(trailer.videoUrl)
+            }}
+            aria-label={`Watch ${trailer.title} trailer`}
             className="relative text-left rounded-lg overflow-hidden group"
           >
             <img
               src={trailer.image}
-              alt={`Trailer ${index + 1}`}
+              alt={`${trailer.title} trailer thumbnail`}
               className="w-full h-52 object-cover transition-transform duration-200 group-hover:scale-105"
             />
 
-            <span className="absolute inset-0 bg-black/35 flex items-end p-3 text-sm font-medium">
+            <span className="absolute inset-0 bg-black/60 text-white flex items-end p-3 text-sm font-medium">
               Watch trailer
             </span>
 
@@ -40,11 +68,22 @@ export default function TrailerSection() {
       </div>
 
       {selectedTrailer && (
-        <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4">
-          <div className="relative w-full max-w-4xl aspect-video bg-black rounded-lg overflow-hidden">
+        <div
+          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Trailer preview"
+          onClick={() => setSelectedTrailer(null)}
+        >
+          <div
+            className="relative w-full max-w-4xl aspect-video bg-black rounded-lg overflow-hidden"
+            onClick={(event) => event.stopPropagation()}
+          >
             <button
               type="button"
+              ref={closeButtonRef}
               onClick={() => setSelectedTrailer(null)}
+              aria-label="Close trailer preview"
               className="absolute top-2 right-2 z-10 bg-white text-black px-2 py-1 rounded text-sm"
             >
               Close

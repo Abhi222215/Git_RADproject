@@ -16,18 +16,26 @@ export const assets = {
 
 export const dummyTrailers = [
     {
+        id: "trailer-1",
+        title: "In the Lost Lands",
         image: "https://img.youtube.com/vi/WpW36ldAqnM/maxresdefault.jpg",
         videoUrl: 'https://www.youtube.com/watch?v=WpW36ldAqnM'
     },
     {
+        id: "trailer-2",
+        title: "Until Dawn",
         image: "https://img.youtube.com/vi/-sAOWhvheK8/maxresdefault.jpg",
         videoUrl: 'https://www.youtube.com/watch?v=-sAOWhvheK8'
     },
     {
+        id: "trailer-3",
+        title: "Lilo & Stitch",
         image: "https://img.youtube.com/vi/1pHDWnXmK7Y/maxresdefault.jpg",
         videoUrl: 'https://www.youtube.com/watch?v=1pHDWnXmK7Y'
     },
     {
+        id: "trailer-4",
+        title: "Havoc",
         image: "https://img.youtube.com/vi/umiKiW4En9g/maxresdefault.jpg",
         videoUrl: 'https://www.youtube.com/watch?v=umiKiW4En9g'
     },
