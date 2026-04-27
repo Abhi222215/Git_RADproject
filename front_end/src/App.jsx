@@ -1,6 +1,6 @@
 
 import Navbar from './component/Navbar.jsx'
-import Footer from './component/Footer/footer.jsx'
+import Footer from './component/Footer.jsx'
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { Movie } from './pages/Movie.jsx'
 import { Moviedetails } from './pages/Moviedetails.jsx'

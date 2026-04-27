@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Menu, MenuIcon, Search, SearchIcon, XIcon } from 'lucide-react'
+import { MenuIcon, SearchIcon, XIcon } from 'lucide-react'
 import {assets} from '../assets/assets'
 
 const Navbar = ({ onLoginClick }) => {
@@ -42,7 +42,7 @@ md:border border-gray-300/20 overflow-hidden transition-[width] duration-300 ${i
         >Login
         </button>
         </div>
-        <MenuIcon className='max-md:m1-4 md:hidden w-8 h-8 cursor-pointer' onClick={() => setIsOpen(!isOpen)} />
+        <MenuIcon className='max-md:ml-4 md:hidden w-8 h-8 cursor-pointer' onClick={() => setIsOpen(!isOpen)} />
       </div>
   )
 }

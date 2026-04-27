@@ -9,7 +9,7 @@ const PULISHABLE_KEY = import.meta.env.VITE_PUBLISHABLE_KEY
 
 
 createRoot(document.getElementById('root')).render(
-  
+
     <BrowserRouter>
       <App />
     </BrowserRouter>
