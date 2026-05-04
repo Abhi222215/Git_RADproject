@@ -9,17 +9,44 @@ import { Seatlayout } from './pages/Seatlayout.jsx'
 import { Favorite } from './pages/Favorite.jsx'
 import { Toaster } from 'react-hot-toast'
 import Home from './pages/home.jsx'
+import Login from './component/Login/login.jsx'
+import { useState } from 'react'
 
 
 const App = () => {
+  const [showLoginModal, setShowLoginModal] = useState(false);
   const isAdminRoute = useLocation().pathname.startsWith('/admin');
+
+  const handleLoginClick = () => {
+    setShowLoginModal(true);
+  };
+
+  const closeLoginModal = () => {
+    setShowLoginModal(false);
+  };
+
   return (
     <>
       <Toaster position="top-right" />
-      {!isAdminRoute && <Navbar />}
+      {!isAdminRoute && <Navbar onLoginClick={handleLoginClick} />}
+
+      {showLoginModal && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+          <div className="relative bg-white p-8 rounded-xl max-w-md w-full mx-4">
+            <button
+              onClick={closeLoginModal}
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+            >
+              ✕
+            </button>
+            <Login onClose={closeLoginModal} />
+          </div>
+        </div>
+      )}
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/movie" element={<Movie />} />
         <Route path="/movie/:id" element={<Moviedetails />} />
         <Route path="/mybooking" element={<Mybooking />} />
