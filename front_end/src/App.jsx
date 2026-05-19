@@ -32,15 +32,7 @@ const App = () => {
 
       {showLoginModal && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="relative bg-white p-8 rounded-xl max-w-md w-full mx-4">
-            <button
-              onClick={closeLoginModal}
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
-            >
-              ✕
-            </button>
-            <Login onClose={closeLoginModal} />
-          </div>
+          <Login onClose={closeLoginModal} />
         </div>
       )}
 
