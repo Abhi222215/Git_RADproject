@@ -1,4 +1,4 @@
-.login-button {
+ .login-button {
   cursor: pointer;
   border: 1px solid rgba(248, 69, 101, 0.55);
   border-radius: 999px;
@@ -179,6 +179,7 @@
   border-radius: 26px;
   background: #0c0c10;
   box-shadow: 0 30px 90px rgba(0, 0, 0, 0.72);
+  box-sizing: content-box;
 }
 
 .login-modal-close {
