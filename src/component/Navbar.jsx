@@ -16,7 +16,7 @@ const Navbar = ({ hasClerkAuth = false }) => {
   return (
     <div className='fixed top-0 left-0 z-50 w-full flex items-center justify-between px-6 md:px-16 lg:px-36 py-5'>
       <Link to="/" className='max-md:flex-1' onClick={scrollTopAndClose}>
-        <img src={assets.logo} alt="" className='w-36 h-auto' />
+        <img src={assets.logo} alt="" className='w-40 md:w-48 lg:w-52 h-auto' />
       </Link>
 
       <div className={`max-md:absolute max-md:top-0 max-md:left-0 max-md:font-medium 

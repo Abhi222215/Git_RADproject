@@ -2,7 +2,7 @@ import { Star } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import Timeformater from './lib/Timeformat'
 
-export const Moviecard = ({ Movie }) => {
+export const Moviecard = ({ Movie, className = '', style, ...props }) => {
   const navigate = useNavigate()
   const movieId = Movie?.id ?? Movie?._id
 
@@ -13,7 +13,11 @@ export const Moviecard = ({ Movie }) => {
   }
 
   return (
-    <div className='flex w-66 flex-col justify-between rounded-2xl bg-gray-800 p-3 transition duration-300 hover:-translate-y-1 hover:ring-2 hover:ring-sky-500 focus-within:ring-2 focus-within:ring-sky-500'>
+    <div
+      className={`flex w-66 flex-col justify-between rounded-2xl bg-gray-800 p-3 transition duration-300 hover:-translate-y-1 hover:ring-2 hover:ring-sky-500 focus-within:ring-2 focus-within:ring-sky-500 ${className}`}
+      style={style}
+      {...props}
+    >
       <img
         onClick={goToMovie}
         src={Movie?.backdrop_path}

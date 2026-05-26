@@ -39,10 +39,10 @@ export const Trailersection = () => {
 
   return (
     <section className='px-6 pb-20 md:px-16 lg:px-36'>
-      <h2 className='mb-10 text-lg font-medium'>Trailers</h2>
+      <h2 className='scroll-reveal mb-10 text-lg font-medium' data-scroll-reveal>Trailers</h2>
 
       <div className='mx-auto max-w-3xl'>
-        <div className='mb-8 overflow-hidden rounded-xl bg-white/5'>
+        <div className='scroll-reveal mb-8 overflow-hidden rounded-xl bg-white/5' data-scroll-reveal>
           <div className='relative w-full' style={{ paddingTop: '56.25%' }}>
             {isPlaying && embedUrl ? (
               <iframe
@@ -81,9 +81,11 @@ export const Trailersection = () => {
                 key={index}
                 type='button'
                 onClick={() => selectTrailer(index)}
-                className={`group block w-full overflow-hidden rounded-xl bg-white/5 p-0 text-left ${
+                className={`scroll-reveal scroll-reveal-card group block w-full overflow-hidden rounded-xl bg-white/5 p-0 text-left ${
                   isActive ? 'ring-2 ring-sky-500' : ''
                 }`}
+                data-scroll-reveal
+                style={{ '--reveal-delay': `${index * 70}ms` }}
                 aria-label='Select trailer'
               >
                 <div className='relative w-full' style={{ paddingTop: '56.25%' }}>
