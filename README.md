@@ -17,3 +17,9 @@
 - The login modal opens from the navbar `Login` button
 - The `/login` route also renders the login page
 - Google and Apple buttons use Clerk OAuth once the publishable key is configured
+
+- ## run web site
+
+- open the new teminal.
+- and then open the git bash
+- write to the "npm run dev" then press enter
